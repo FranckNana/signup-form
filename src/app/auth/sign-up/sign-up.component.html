@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+    <div class="card auth">
+      <div class="card-body auth-card">
+        <div class="auth-avatar">
+          <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">FirstName : </label>
+              <input type="text" name="firstName" class="form-control" placeholder="FirstName" formControlName="firstName">
+            </div>
+            <div class="form-group">
+              <label for="name">LastName : </label>
+              <input type="text" name="lastName" class="form-control" placeholder="LastName" formControlName="lastName">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone : </label>
+              <input type="text" name="phoneNumber" class="form-control" placeholder="phoneNumber" formControlName="phoneNumber">
+            </div>
+            <div class="form-group">
+              <label for="name">Country : </label>
+              <input type="text" name="country" class="form-control" placeholder="Country" formControlName="country">
+            </div>
+            <div class="form-group">
+              <label for="phone">Sexe : </label>
+              <select name="sexe" class="form-control" formControlName="sexe">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="M">M</option>
+                <option value="F">F</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email : </label>
+              <input type="text" name="email" class="form-control" placeholder="Email" formControlName="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password : </label>
+              <input type="password" name="passWord" class="form-control" placeholder="********" formControlName="passWord">
+            </div>
+            <div class="form-group">
+              <label for="c_password">Confirm Password : </label>
+              <input type="password" name="passWordConfirm" class="form-control" placeholder="********" formControlName="passWordConfirm">
+            </div>
+            <div class="text-center">
+              <input type="submit" class="btn btn-my" [disabled]="signupForm.invalid" value="Sign Up">
+            </div>
+            <div class="text-center login">
+              Already have an account ? <a routerLink="/login">Login</a> hera.
+            </div>
+
+        </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
